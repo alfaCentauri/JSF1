@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro</title>
+        <h:outputStylesheet library="css" name="estilos.css"/>
+        <h:outputScript library="javascript" name="archivo.js"/>
+        <h:graphicImage library="img" name="evangelion4.jpg" />
+    </h:head>
+    <h:body>
+        Hola mundo desde Facelets
+        <h3>P&aacute;gina de registro.</h3>
+        <h:form>
+            <h:panelGrid columns="3" columnClasses="alinder, alinizq, alinizq">
+                <h:outputLabel value="Saludo: " for="saludo"/>
+                <h:selectOneMenu id="saludo" label="Saludo" value="#{registrationBean.saludo}">
+                    <f:selectItem itemLabel="" itemValue=""></f:selectItem>
+                    <f:selectItem itemLabel="Sr." itemValue="Sr."></f:selectItem>
+                    <f:selectItem itemLabel="Srs." itemValue="Srs."></f:selectItem>
+                    <f:selectItem itemLabel="Sra." itemValue="Sra."></f:selectItem>
+                    <f:selectItem itemLabel="Srta." itemValue="Srta."></f:selectItem>
+                    <f:selectItem itemLabel="Ing." itemValue="Ing."></f:selectItem>                    
+                </h:selectOneMenu>
+                <h:message for="saludo"/>
+                
+                <h:outputLabel value="Nombre: " for="nombre" />
+                <h:inputText id="nombre" label="nombre" required="true" value="#{registrationBean.nombre}" />
+                <h:message for="nombre"/>
+                
+                <h:outputLabel value="Apellido: " for="apellido" />
+                <h:inputText id="apellido" label="apellido" required="true" value="#{registrationBean.apellidos}" />
+                <h:message for="apellido"/>
+                
+                <h:outputLabel value="Edad: " for="edad" />
+                <h:inputText id="edad" label="edad" value="#{registrationBean.edad}" />
+                <h:message for="edad"/>
+                
+                <h:outputLabel value="Direccion de Correo: " for="email" />
+                <h:inputText id="email" label="email" required="true" value="#{registrationBean.email}" />
+                <h:message for="email"/>
+                <h:panelGroup />
+                <h:commandButton id="register" value="Registrar" action="confirmacion" />
+                
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
